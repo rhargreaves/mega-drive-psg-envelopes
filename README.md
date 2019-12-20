@@ -1,4 +1,4 @@
-# SEGA Mega Drive PSG Envelopes
+# Mega Drive PSG Envelopes
 
 Builds a ROM which probably makes a horrible noise. Mostly for experimenting with programming software-driven PSG envelopes for defining PSG instruments for the [Mega Drive MIDI Interface](https://github.com/rhargreaves/mega-drive-midi-interface).
 
