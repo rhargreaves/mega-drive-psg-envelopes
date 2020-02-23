@@ -13,7 +13,7 @@ int main()
     const u8 psgInstrument[] = { 0xFE, 0x00, 0xFF};
 
     const void* const instrumentList[] = {
-      psgInstrument,
+      &psgInstrument,
       NULL
     };
 
