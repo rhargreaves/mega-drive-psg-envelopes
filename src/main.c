@@ -50,22 +50,15 @@ const u8 test_custom[] = {
 const u8 instrument[] = { 0xFE, 0x00, 0xFF };
 
 const void* const instrumentList[] = {
-    &instrument[0],
-  &instrument[0],
-    &instrument[0],
-    &instrument[0],
-    &instrument[0],
-    &instrument[0],
-    &instrument[0],
-    &instrument[0],
-        &instrument[0],
-  &instrument[0],
-    &instrument[0],
-    &instrument[0],
-    &instrument[0],
-    &instrument[0],
-    &instrument[0],
-    &instrument[0],
+    instrument,
+    instrument,
+    instrument,
+    instrument,
+    instrument,
+    instrument,
+    instrument,
+    instrument,
+    instrument,
     NULL
 };
 
