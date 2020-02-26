@@ -47,14 +47,34 @@ const u8 test_custom[] = {
     /* delay */ 0xfe, 0x00,
     0xff };
 
+const u8 instrument[] = { 0xFE, 0x00, 0xFF };
+
+const void* const instrumentList[] = {
+    &instrument[0],
+  &instrument[0],
+    &instrument[0],
+    &instrument[0],
+    &instrument[0],
+    &instrument[0],
+    &instrument[0],
+    &instrument[0],
+        &instrument[0],
+  &instrument[0],
+    &instrument[0],
+    &instrument[0],
+    &instrument[0],
+    &instrument[0],
+    &instrument[0],
+    &instrument[0],
+    NULL
+};
+
 int main()
 {
     VDP_drawText("PSG Envelope Testing", 10, 1);
-
-    const void* const instrumentList[] = { NULL };
-
     echo_init(instrumentList);
-    echo_play_bgm(test_custom);
+    echo_set_volume(255);
+    echo_play_bgm(test_psg_esf);
     printStatus();
 
     while (TRUE) {
