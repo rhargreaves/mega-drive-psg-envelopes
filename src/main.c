@@ -2,15 +2,6 @@
 
 #include <genesis.h>
 
-static void printStatus(void)
-{
-    static u16 y = 1;
-    u16 status = echo_get_status();
-    char buffer[15];
-    sprintf(buffer, "Status: %d", status);
-    VDP_drawText(buffer, 1, ++y);
-}
-
 const u8 test_psg_esf[] = {
     /* set inst 1 */ 0x48, 0x08,
     /* set psg vol*/ 0x28, 0x00,
@@ -66,10 +57,7 @@ int main()
 {
     VDP_drawText("PSG Envelope Testing", 10, 1);
     echo_init(instrumentList);
-    echo_set_volume(255);
-    echo_play_bgm(test_psg_esf);
-    printStatus();
-
+    echo_play_bgm(test_custom);
     while (TRUE) {
         VDP_waitVSync();
     }
