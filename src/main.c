@@ -36,7 +36,6 @@ int main()
 
     printStatus();
     echo_init(instrumentList);
-    VDP_waitVSync();
     printStatus();
 
     const u8 noteOnPsg1 = 0x08;
@@ -53,7 +52,6 @@ int main()
         noteOnPsg1, note, endEsf };
 
     echo_play_bgm(test_psg_esf);
-    VDP_waitVSync();
     printStatus();
 
     while (TRUE) {
