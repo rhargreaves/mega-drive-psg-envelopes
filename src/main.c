@@ -20,13 +20,11 @@ int main()
         /* set psg vol*/ 0x29, 0x00,
         /* note on */ 0x09, 0x04, 0xff };
 
-    // 90 us = Timer A
-    // 16518.7 us = Timer B = 16.5 ms
     VDP_drawText("PSG Envelope Testing", 10, 1);
     echo_init(instrumentList);
-
     echo_play_direct(test_custom);
-    VDP_waitVSync();
+    while (echo_get_status() == ECHO_STAT_DIRBUSY)
+        ;
     echo_play_direct(test_custom2);
 
     while (TRUE) {
