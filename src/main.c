@@ -32,7 +32,6 @@ int main()
     VDP_waitVSync();
     echo_play_direct(test_custom);
     VDP_waitVSync();
-    //  VDP_waitVSync();
     echo_play_direct(test_custom2);
 
     while (TRUE) {
