@@ -4,7 +4,7 @@
 
 const u8 instrument[]
     = { 0x00, 0x01, 0x02, 0x01, 0x01, 0x02, 0x02, 0x03, 0x03, 0x04, 0x04, 0x08,
-          0x08, 0x08, 0x08, 0x0A, 0x0A, 0x0C, 0x0C, 0xFE, 0x0F, 0xFF };
+          0x08, 0x08, 0x08, 0x0A, 0x0A, 0x0C, 0x0C, 0xFE, 0x00, 0xFF };
 
 const void* const instrumentList[]
     = { instrument, instrument, instrument, instrument, instrument, instrument,
@@ -23,7 +23,7 @@ int main()
     VDP_drawText("PSG Envelope Testing", 10, 1);
     echo_init(instrumentList);
     echo_play_direct(test_custom);
-    while (echo_get_status() == ECHO_STAT_DIRBUSY)
+    while (echo_get_status() && ECHO_STAT_DIRBUSY)
         ;
     echo_play_direct(test_custom2);
 
